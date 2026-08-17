@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nummeiro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+    <h1>Nummeiro</h1>
+    <p class="sub">7×7マスの数字の数だけ右か下へジャンプして、スタートからゴールまで繋げてください。数字は設定した記憶時間だけ見えたあと隠れます。ミスは3回まで許容されます。</p>
+
+    <div class="layout">
+        <section class="panel settings">
+            <h2>設定</h2>
+
+            <label class="field">
+                <span>制限時間: <b id="speedValue">30</b> 秒</span>
+                <input type="range" id="speedRange" min="10" max="60" step="1" value="30">
+            </label>
+
+            <label class="field">
+                <span>記憶時間: <b id="memorizeValue">10</b> 秒</span>
+                <input type="range" id="memorizeRange" min="2" max="30" step="1" value="10">
+            </label>
+
+            <button class="start-btn" id="startBtn">開始する</button>
+
+            <div class="stats">
+                <div><span>試行</span><b id="statAttempts">0</b></div>
+                <div><span>クリア</span><b id="statClears">0</b></div>
+                <div><span>クリア率</span><b id="statRate">-</b></div>
+                <div><span>連続成功</span><b id="statStreak">0</b></div>
+                <div><span>最高連続</span><b id="statMaxStreak">0</b></div>
+                <div><span>ベストタイム</span><b id="statBestTime">-</b></div>
+            </div>
+        </section>
+
+        <section class="panel game-area">
+            <div class="board-wrap">
+                <div class="phase-label" id="phaseLabel">「開始する」を押してください</div>
+                <div class="crack-status" id="statusRow">
+                    <span id="elapsedDisplay">経過: -</span>
+                    <span id="missDisplay">ミス: 0 / 3</span>
+                    <span id="remainingDisplay">残り: -</span>
+                </div>
+                <div class="timer-bar" id="timerBarWrap">
+                    <div class="timer-bar-inner" id="timerBar"></div>
+                </div>
+                <div class="board" id="board"></div>
+                <div class="result-message" id="resultMessage"></div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
