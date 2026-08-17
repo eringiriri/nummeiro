@@ -148,7 +148,7 @@ function renderBoard() {
 
         if (isStart) btn.innerHTML = HOUSE_SVG;
         else if (isTarget) btn.innerHTML = FLAG_SVG;
-        else if (!numbersHidden || state || (revealPositions && revealPositions.has(i))) {
+        else if (!numbersHidden || (revealPositions && revealPositions.has(i))) {
             btn.textContent = values[i] || '';
         }
 
